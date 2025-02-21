@@ -29,7 +29,7 @@ Before running this Terraform setup, ensure you have:
 
 ### 2️ Initialize Terraform
 
-* terrafrom init
+* terraform init
 
 ### 3 Deploy the infrastructure 
 
@@ -39,7 +39,9 @@ Before running this Terraform setup, ensure you have:
 
 -- After the deployment is completed, terrafrom will output the ALB dns-name and the instance's private IP.
 
--- Copy the outputted ALB DNS name and test it in your browser, it will display the default nginx server: **Welcome to My Nginx Web Server on Ubuntu EC2**
+-- Copy the ALB DNS name from the output and open it in your browser. 
+-- You may encounter a security warning indicating that the server is not secure. Click *"Advanced"* and proceed to the server to continue.
+-- You should see the default Nginx server displaying: *Welcome to My Nginx Web Server on Ubuntu EC2.*
 
 ## **Assumptions Made**
 
@@ -61,6 +63,6 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 After testing the infrastructure can be destroyed using the command below to avoid AWS charges.
 
 * terraform destroy
-### Reframe Data Devops Challenge ###
+
 
 

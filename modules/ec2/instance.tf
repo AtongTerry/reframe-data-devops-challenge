@@ -8,10 +8,12 @@ resource "aws_instance" "ec2_instance" {
   user_data = <<-EOF
                 #!/bin/bash
                 sudo apt update -y
-                sudo apt install nginx -y
-                sudo ufw allow 'Nginx HTTP'
+                sudo apt upgrade -y
+                sudo apt install -y nginx
                 sudo systemctl start nginx
                 sudo systemctl enable nginx
+                echo "<h1>Welcome to My Nginx Web Server on Ubuntu EC2</h1>" | sudo tee /var/www/html/index.html
+                sudo systemctl restart nginx
                 EOF
 
   tags = {
